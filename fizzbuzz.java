@@ -7,31 +7,42 @@ import java.util.Scanner;
 public class fizzbuzz {
 	public static void main(String args[]){
 		System.out.println("Enter the number");
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
-		List<String> result = fizzBuzz(n);
+		
+		List<String> result = generateFib(n);
 		java.util.Iterator<String> it = result.iterator();
 		while(it.hasNext()){
 			System.out.println(it.next()+" ");
 		}
 	}
-    public static List<String> fizzBuzz(int n) {
-        List<String> ls = new ArrayList<String>();
-        for(int i =1;i<=n;i++){
-            if(i%3==0 && i%5==0)
-            ls.add("FizzBuzz");
-            else if(i%3==0)
-            ls.add("Buzz");
-            else if(i%5==0)
-            ls.add("Fizz");
-            else if(isPrime(i))
-            ls.add("BuzzFizz");	
-            else
-            ls.add(Integer.toString(i));
-        }
-        return ls;
-    }
-
+    private static List<String> generateFib(int n) {
+		// TODO Auto-generated method stub
+    	 int n1=0,n2=1,n3,i; 
+    	 List<String> ls = new ArrayList<String>(); 
+    	 ls.add(Integer.toString(n1));
+    	 ls.add(Integer.toString(n2));
+    	  
+    	 for(i=2;i<n;++i)//loop starts from 2 because 0 and 1 are already added   
+    	 {    
+    	  n3=n1+n2;
+    	  if(n3%3==0 && n3%5==0)
+              ls.add("FizzBuzz");
+              else if(n3%3==0)
+              ls.add("Buzz");
+              else if(n3%5==0)
+              ls.add("Fizz");
+              else if(isPrime(n3))
+              ls.add("BuzzFizz");	
+              else
+              ls.add(Integer.toString(n3));
+    	      
+    	  n1=n2;    
+    	  n2=n3;    
+    	 }
+		return ls;
+	}
 	private static boolean isPrime(int num) {
 		// TODO Auto-generated method stub
 		if(num<=2)
