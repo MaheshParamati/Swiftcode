@@ -1,0 +1,21 @@
+Here it generates first n fibonacci numbers based on the conditions
+"Buzz" when F(n) is divisible by 3.
+"Fizz" when F(n) is divisible by 5.
+"FizzBuzz" when F(n) is divisible by 15.
+"BuzzFizz" when F(n) is prime.
+the value F(n) otherwise.
+
+For example if I give input as 10 it results in:
+Enter the number
+10  -->this is the count
+??Here it produces 10 fibonacci numbers bases on the above condition??
+0 
+1 
+1 
+2 
+Buzz -->since the number is divisible by 3
+Fizz -->since the number is divisible by 5
+8 
+BuzzFizz -->since the number is a prime number i.e 13 here 
+Buzz -->since the number is divisible by 3
+34 
